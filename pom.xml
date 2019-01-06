@@ -134,11 +134,11 @@
     <distributionManagement>
         <repository>
             <id>releases</id>
-            <url>https://oauth-my-autorization-server.herokuapp.com/</url>
+            <url>https://oauth-resource-server-1.herokuapp.com/</url>
         </repository>
         <snapshotRepository>
             <id>snapshots</id>
-            <url>https://oauth-my-autorization-server.herokuapp.com/</url>
+            <url>https://oauth-resource-server-1.herokuapp.com/</url>
         </snapshotRepository>
     </distributionManagement>
 
