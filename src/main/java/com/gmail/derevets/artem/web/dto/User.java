@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
 @Component*/
 public class User {
 
-    @Id
+    /*@Id
     @Field(value = "id")
     @JsonProperty("id")
     private String id;
@@ -47,5 +47,5 @@ public class User {
     @Field(value = "role")
     @JsonProperty("role")
     private String role;
-
+*/
 }

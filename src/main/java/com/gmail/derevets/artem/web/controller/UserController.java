@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
 
 
-    @Autowired
+  /*  @Autowired
     private UserRepository userRepository;
 
 
@@ -27,7 +27,7 @@ public class UserController {
         log.info("userJSON, {}", user);
         userRepository.save(user);
         return new ResponseEntity<>(user, HttpStatus.CREATED);
-    }
+    }*/
 
 }
 
