@@ -11,9 +11,9 @@ import org.springframework.data.mongodb.core.mapping.Field;
 import org.springframework.stereotype.Component;
 
 
-@Document(collection = "users")
+/*@Document(collection = "users")
 @Data
-@Component
+@Component*/
 public class User {
 
     @Id
