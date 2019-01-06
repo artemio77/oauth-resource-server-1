@@ -131,5 +131,15 @@
             </resource>
         </resources>
     </build>
+    <distributionManagement>
+        <repository>
+            <id>releases</id>
+            <url>https://oauth-my-autorization-server.herokuapp.com/</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <url>https://oauth-my-autorization-server.herokuapp.com/</url>
+        </snapshotRepository>
+    </distributionManagement>
 
 </project>
