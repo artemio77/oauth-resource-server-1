@@ -7,4 +7,4 @@ deploy:
   provider: heroku
   api-key:
     secure: $HEROKU_API_KEY
-  app: oauth-my-resource-server-1
+  app: oauth-resource-server-1
