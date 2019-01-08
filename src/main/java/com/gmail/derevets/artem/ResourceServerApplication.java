@@ -6,12 +6,18 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.annotation.Resource;
 
 
 @SpringBootApplication
 @ComponentScan("com.gmail.derevets.artem")
+@EnableJpaRepositories(basePackages = {
+        "com.gmail.derevets.artem.web.repository"
+})
+@EnableTransactionManagement
 public class ResourceServerApplication extends SpringBootServletInitializer {
 
 

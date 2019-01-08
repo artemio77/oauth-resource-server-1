@@ -1,4 +1,4 @@
-package com.gmail.derevets.artem.config;
+package com.gmail.derevets.artem.config.ouath;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.Ordered;
