@@ -13,7 +13,6 @@ import org.springframework.context.annotation.Configuration;
 
 @Slf4j
 @Configuration
-@EnableRabbit
 public class RabbitMqConfig {
 
     @Autowired
