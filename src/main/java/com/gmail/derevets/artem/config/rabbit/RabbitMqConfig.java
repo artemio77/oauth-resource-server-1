@@ -25,7 +25,7 @@ public class RabbitMqConfig {
 
     @Bean
     public ConnectionFactory connectionFactory() throws URISyntaxException {
-        URI uri = new URI(rabbitMqUrl);
+        URI uri = new URI("amqp://rtnnybpt:bdHUsMiKQOVdjfp2hFNsraFMizx2SxEv@bee.rmq.cloudamqp.com/rtnnybpt");
         return new CachingConnectionFactory(uri);
     }
 
