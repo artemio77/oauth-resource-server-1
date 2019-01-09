@@ -9,9 +9,10 @@ import org.springframework.stereotype.Component;
 
 import java.util.Random;
 
-@EnableRabbit
+
 @Component
 @Slf4j
+@EnableRabbit
 public class RabbitMqListener {
 
     @RabbitListener(queues = "subscribe-queue-one")

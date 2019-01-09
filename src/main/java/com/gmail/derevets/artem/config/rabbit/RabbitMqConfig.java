@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
 import javax.annotation.Resource;
 import java.net.URI;
@@ -21,6 +22,7 @@ import java.net.URISyntaxException;
 @Slf4j
 @Configuration
 public class RabbitMqConfig {
+
     @Value("${rabbitmq.url}")
     private String rabbitMqUrl;
 
