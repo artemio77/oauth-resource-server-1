@@ -21,6 +21,8 @@ import java.net.URISyntaxException;
 
 @Slf4j
 @Configuration
+@PropertySource(value = {"classpath:application-dev.properties",
+        "classpath:application-release.properties"})
 public class RabbitMqConfig {
 
     @Value("${rabbitmq.url}")
