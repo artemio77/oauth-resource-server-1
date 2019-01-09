@@ -21,31 +21,18 @@ import java.net.URISyntaxException;
 
 @Slf4j
 @Configuration
-@PropertySource(value = {"classpath:application-dev.properties",
-        "classpath:application-release.properties"})
 public class RabbitMqConfig {
 
-    @Value("${rabbitmq.url}")
-    private String rabbitMqUrl;
+    @Autowired
+    private ConnectionFactory connectionFactory;
 
     @Bean
-    public ConnectionFactory connectionFactory() throws URISyntaxException {
-        URI uri = new URI(rabbitMqUrl);
-        CachingConnectionFactory connectionFactory = new CachingConnectionFactory(uri);
-        if (StringUtils.isNotBlank(uri.getPath()))
-            connectionFactory.setVirtualHost(uri.getPath().replace("/", ""));
-        connectionFactory.setConnectionTimeout(3000);
-        connectionFactory.setRequestedHeartBeat(30);
-        return connectionFactory;
+    public AmqpAdmin amqpAdmin() {
+        return new RabbitAdmin(connectionFactory);
     }
 
     @Bean
-    public AmqpAdmin amqpAdmin() throws URISyntaxException {
-        return new RabbitAdmin(connectionFactory());
-    }
-
-    @Bean
-    public RabbitTemplate rabbitTemplate() throws URISyntaxException {
-        return new RabbitTemplate(connectionFactory());
+    public RabbitTemplate rabbitTemplate() {
+        return new RabbitTemplate(connectionFactory);
     }
 }

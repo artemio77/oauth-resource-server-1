@@ -18,7 +18,7 @@ public class RabbitMqListener {
     @RabbitListener(queues = "subscribe-queue-one")
     public void subscribeWorkerOne(String message) throws InterruptedException {
         log.info("worker 1 : {}", message);
-        Thread.sleep(1000 * new Random().nextInt(20));
+        Thread.sleep(100 * new Random().nextInt(20));
     }
 
     @Bean
