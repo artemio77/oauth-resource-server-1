@@ -1,4 +1,4 @@
-package com.gmail.derevets.artem.web.dto;
+package com.gmail.derevets.artem.web.dto.postgres;
 
 
 import org.hibernate.annotations.Type;

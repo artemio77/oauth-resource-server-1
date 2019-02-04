@@ -1,4 +1,4 @@
-package com.gmail.derevets.artem.web.dto;
+package com.gmail.derevets.artem.web.dto.postgres;
 
 
 import com.fasterxml.jackson.annotation.JsonProperty;

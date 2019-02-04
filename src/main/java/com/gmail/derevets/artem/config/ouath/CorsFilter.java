@@ -1,8 +1,8 @@
 package com.gmail.derevets.artem.config.ouath;
 
-import org.springframework.context.annotation.Configuration;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
+import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.*;
@@ -12,6 +12,7 @@ import java.io.IOException;
 
 @Component
 @Order(Ordered.HIGHEST_PRECEDENCE)
+@EnableAsync
 public class CorsFilter implements Filter {
 
     @Override

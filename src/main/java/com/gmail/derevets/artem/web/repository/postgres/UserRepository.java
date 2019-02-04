@@ -1,7 +1,7 @@
-package com.gmail.derevets.artem.web.repository;
+package com.gmail.derevets.artem.web.repository.postgres;
 
 
-import com.gmail.derevets.artem.web.dto.User;
+import com.gmail.derevets.artem.web.dto.postgres.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
