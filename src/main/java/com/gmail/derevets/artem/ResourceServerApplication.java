@@ -7,18 +7,12 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import org.springframework.data.mongodb.config.EnableMongoAuditing;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 
 
 @SpringBootApplication
-@ComponentScan("com.gmail.derevets.artem")
-@EnableJpaRepositories(basePackages = {
-        "com.gmail.derevets.artem.web.repository"
-})
 @EnableTransactionManagement
-@EnableMongoAuditing
 @PropertySource(value = {"classpath:application.properties",
         "classpath:application-release.properties"})
 public class ResourceServerApplication extends SpringBootServletInitializer {

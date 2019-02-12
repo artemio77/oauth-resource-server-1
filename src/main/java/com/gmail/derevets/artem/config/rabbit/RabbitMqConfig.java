@@ -28,8 +28,8 @@ public class RabbitMqConfig {
     }
 
     @Bean
-    public Queue twitterSaveQueue() {
-        return new Queue("user-save-mongo");
+    public Queue userSaveQueue() {
+        return new Queue("user-save-cassandra");
     }
 
     @Bean
@@ -39,7 +39,7 @@ public class RabbitMqConfig {
 
     @Bean
     public Binding twitterSaveTweetBinding() {
-        return BindingBuilder.bind(twitterSaveQueue()).to(twitterSaveTopic()).with("user-save");
+        return BindingBuilder.bind(userSaveQueue()).to(twitterSaveTopic()).with("user-save");
     }
 
 
