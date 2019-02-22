@@ -23,9 +23,6 @@ public class User extends BaseCassandraEntity<UUID> implements Serializable {
     @PrimaryKeyColumn(name = "id")
     private UUID id;
 
-    @PrimaryKeyColumn(name = "externalId")
-    private UUID externalId;
-
     @PrimaryKeyColumn(name = "email", type = PrimaryKeyType.PARTITIONED)
     private String email;
 

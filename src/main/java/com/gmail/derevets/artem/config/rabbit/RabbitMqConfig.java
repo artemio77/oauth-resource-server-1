@@ -28,8 +28,13 @@ public class RabbitMqConfig {
     }
 
     @Bean
-    public Queue userSaveQueue() {
+    public Queue userSaveCassandraQueue() {
         return new Queue("user-save-cassandra");
+    }
+
+    @Bean
+    public Queue userSaveElasticQueue() {
+            return new Queue("user-save-elastic");
     }
 
     @Bean
@@ -38,9 +43,17 @@ public class RabbitMqConfig {
     }
 
     @Bean
-    public Binding twitterSaveTweetBinding() {
-        return BindingBuilder.bind(userSaveQueue()).to(twitterSaveTopic()).with("user-save");
+    public TopicExchange userSaveTopicExchange() {
+        return new TopicExchange("UserTopic");
     }
 
+    @Bean
+    public Binding userSaveCassandraBinding() {
+        return BindingBuilder.bind(userSaveCassandraQueue()).to(twitterSaveTopic()).with("user-save");
+    }
 
+    @Bean
+    public Binding userSaveElasticBinding() {
+        return BindingBuilder.bind(userSaveElasticQueue()).to(twitterSaveTopic()).with("user-save");
+    }
 }

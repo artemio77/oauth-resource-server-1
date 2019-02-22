@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.cassandra.core.cql.PrimaryKeyType;
 import org.springframework.data.cassandra.core.mapping.PrimaryKeyColumn;
 import org.springframework.data.cassandra.core.mapping.Table;
-import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

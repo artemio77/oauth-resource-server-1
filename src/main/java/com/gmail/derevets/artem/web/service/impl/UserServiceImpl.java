@@ -24,7 +24,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void save(User userCassandra) {
-        userCassandraRepository.insert(userCassandra);
+        userCassandraRepository.save(userCassandra);
     }
 
     @Override
@@ -36,9 +36,6 @@ public class UserServiceImpl implements UserService {
     public void saveFromJsonNode(JsonNode user, ObjectMapper mapper) throws IOException {
         User userCassandra = mapper.treeToValue(user, User.class);
         log.info("UserCassandra {}", userCassandra);
-        JsonNode externalId = user.get("id");
-        userCassandra.setExternalId(UUID.fromString(externalId.asText()));
-        userCassandra.setId(UUIDs.timeBased());
         userCassandraRepository.save(userCassandra);
     }
 

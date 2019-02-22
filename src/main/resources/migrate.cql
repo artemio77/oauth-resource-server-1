@@ -8,7 +8,6 @@ CREATE KEYSPACE application
 CREATE TABLE application.user
 (
   id                     timeuuid,
-  externalId             uuid,
   email                  text,
   firstName              text,
   lastName               text,
@@ -21,7 +20,7 @@ CREATE TABLE application.user
   creationTime           timestamp,
   modificationTime       timestamp,
   version                int,
-  PRIMARY KEY (id, externalId, email, creationTime)
+  PRIMARY KEY (id, email, creationTime)
 );
 
 CREATE TABLE application.chat
