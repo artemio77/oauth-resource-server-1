@@ -1,7 +1,7 @@
 package com.gmail.derevets.artem.web.service.impl;
 
 import com.gmail.derevets.artem.web.dto.cassandra.Chat;
-import com.gmail.derevets.artem.web.dto.cassandra.UserCassandra;
+import com.gmail.derevets.artem.web.dto.cassandra.User;
 import com.gmail.derevets.artem.web.repository.cassandra.ChatRepository;
 import com.gmail.derevets.artem.web.service.ChatService;
 import com.gmail.derevets.artem.web.service.UserService;
@@ -17,8 +17,10 @@ import java.util.stream.Collectors;
 @Slf4j
 @Service
 public class ChatServiceImpl implements ChatService {
+
     @Autowired
     private ChatRepository chatRepository;
+
     @Autowired
     private UserService userService;
 
@@ -32,15 +34,15 @@ public class ChatServiceImpl implements ChatService {
 
     @Override
     public Chat get(Chat chat) {
-        Optional<Chat> chatOptional = chatRepository.findById(chat.getKey().getId());
+        Optional<Chat> chatOptional = chatRepository.findById(chat.getId());
         return chatOptional.get();
     }
 
 
     private Boolean validateChatParameters(Chat chat) {
-        List<UUID> participantList = chat.getKey().getParticipant();
+        List<UUID> participantList = chat.getParticipant();
         List<UUID> userCassandraList = userService.getAllByIds(participantList).stream()
-                .map(userCassandra -> userCassandra.getKey().getId())
+                .map(User::getId)
                 .collect(Collectors.toList());
         return participantList.containsAll(userCassandraList);
     }

@@ -2,18 +2,18 @@ package com.gmail.derevets.artem.web.service;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.gmail.derevets.artem.web.dto.cassandra.UserCassandra;
+import com.gmail.derevets.artem.web.dto.cassandra.User;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-public interface UserService extends BaseService<UserCassandra> {
+public interface UserService extends BaseService<User> {
 
     void saveFromJsonNode(JsonNode user, ObjectMapper objectMapper) throws IOException;
 
-    Optional<UserCassandra> get(UUID id);
+    Optional<User> get(UUID id);
 
-    List<UserCassandra> getAllByIds(List<UUID> uuidList);
+    List<User> getAllByIds(List<UUID> uuidList);
 }

@@ -82,7 +82,6 @@
             <artifactId>dozer</artifactId>
             <version>5.5.1</version>
         </dependency>
-
         <!-- oauth -->
         <dependency>
             <groupId>org.springframework.security.oauth</groupId>
@@ -140,7 +139,6 @@
             <artifactId>cassandra-driver-core</artifactId>
             <version>3.4.0</version>
         </dependency>
-
     </dependencies>
     <build>
         <resources>
